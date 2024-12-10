@@ -46,8 +46,13 @@ const Signup = () => {
         }
     }
     return (
-        <div>
-            <div className=' flex  items-center justify-center mt-[20vh]'>
+        <div className='text-black'>
+
+            <div className=' flex flex-col  items-center justify-center mt-[10vh]'>
+                <div className='flex flex-col justify-center items-center h-fit  p-6  w-fit'>
+                    <h1 className='text-4xl font-mono text-green-400'>Super app</h1>
+                    <h3 className='text-sm'>Create your own account</h3>
+                </div>
                 <form className='flex-col flex gap-4   w-[40vh] ' action="">
                     <input onChange={(e) => { setformData({ ...formData, name: e.target.value }) }} className='bg-zinc-300 p-2 rounded-md' type="text" placeholder='Name' value={formData.name} />
                     {error.name ? <p className='text-red-500 text-xs' >Required valid data</p> : ""}
@@ -57,10 +62,10 @@ const Signup = () => {
                     <input onChange={(e) => { setformData({ ...formData, email: e.target.value }) }} className='bg-zinc-300 p-2 rounded-md' type="email" placeholder='email' value={formData.email} />
                     {error.email ? <p className='text-red-500 text-xs' >Required valid data</p> : ""}
 
-                    <input onChange={(e) => { setformData({ ...formData, mobile: e.target.value }) }} className='bg-zinc-300 p-2 rounded-md' type="number" placeholder='Mobile' value={formData.mobile} />
+                    <input onChange={(e) => { setformData({ ...formData, mobile: e.target.value }) }} className='bg-zinc-300 p-2 rounded-md' type="text" placeholder='Mobile' value={formData.mobile} />
                     {error.mobile ? <p className='text-red-500 text-xs' >Required valid data</p> : ""}
                     <div >     <input onChange={(e) => { setformData({ ...formData, termsandconditions: e.target.checked }) }} type="checkbox" name="checkbox" id="checkbox" checked={formData.termsandconditions} />
-                        <label htmlFor="checkbox">Agree to terms and conditions</label>
+                        <label className='text-white' htmlFor="checkbox">Agree to terms and conditions</label>
                         {error.termsandconditions ? <p className='text-red-500 text-xs' >Agree to proceed</p> : ""}</div>
 
 
